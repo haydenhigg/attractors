@@ -17,7 +17,7 @@ pub fn make_image_data(w: usize, h: usize, histogram: Vec<Vec<u8>>, color: fn(u8
 	}
 
 	//-- so that the math is easier when scaling --//
-	let scaling = u8::MAX as f64 / (max - min) as f64;
+	let scaling = u8::MAX as f64 / (max - min) as f64; // ! up to u8::MAX, not 1 !
 	let offset = min as f64 * scaling;
 
 	//-- create 1D vector of image bytes --//
@@ -39,8 +39,8 @@ pub fn make_image_data(w: usize, h: usize, histogram: Vec<Vec<u8>>, color: fn(u8
 pub fn write_to_ppm(w: usize, h: usize, image_data: Vec<u8>, file_name: &'static str) -> Result<()> {
 	let mut file = File::create(file_name)?;
 
-	writeln!(file, "P6 {} {} {}", w, h, u8::MAX)?;
-	file.write_all(&image_data)?;
+	writeln!(file, "P6 {} {} {}", w, h, u8::MAX)?; // header
+	file.write_all(&image_data)?;                  // data   | 1 call is seemingly the most efficient way
 
 	Ok(())
 }
