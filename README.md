@@ -16,7 +16,11 @@ Three color functions are provided:
 - `color::sparks`: monochromatic shades of orange on a black background
 - `color::heat`: heat-map-inspired; black->blue->green->yellow->orange
 
-The fourth argument to `make_image_data` in the `file` module takes a color function. Any function that fits fn(u8) -> [u8; 3] works (takes a density from 0-255 and returns [r, g, b]).
+The fourth argument to `make_image_data` in the `file` module takes a color function. Any function that fits
+```rust
+fn(u8) -> [u8; 3]
+```
+works (takes a density from 0-255 and returns [r, g, b]).
 
 ## examples
 
