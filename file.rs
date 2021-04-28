@@ -1,6 +1,7 @@
 use std::fs::File;
 use std::io::{Result, Write};
 
+//-- make a 1D Vec of bytes from the 2D histogram
 pub fn make_image_data(w: usize, h: usize, histogram: Vec<Vec<u8>>, color: fn(u8) -> [u8; 3]) -> Vec<u8> {
 	//-- find lowest and highest densities --//
 	let mut min = u8::MAX;
@@ -36,10 +37,11 @@ pub fn make_image_data(w: usize, h: usize, histogram: Vec<Vec<u8>>, color: fn(u8
 	image_data
 }
 
+//-- write Vec of bytes to a .ppm file --//
 pub fn write_to_ppm(w: usize, h: usize, image_data: Vec<u8>, file_name: &'static str) -> Result<()> {
 	let mut file = File::create(file_name)?;
 
-	writeln!(file, "P6 {} {} {}", w, h, u8::MAX)?; // header
+	writeln!(file, "P6 {} {} {}", w, h, u8::MAX)?; // header | binary, 8-bit PPM file
 	file.write_all(&image_data)?;                  // data   | 1 call is seemingly the most efficient way
 
 	Ok(())
