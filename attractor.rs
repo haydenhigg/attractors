@@ -8,7 +8,6 @@ pub struct Point {
  * Vecs EVERYWHERE, because it is so much easier to manage memory
  * that way and not overflow the stack with arrays
  */
-   
 
 //-- Peter de Jong attractor --//
 pub fn generate(iters: usize, a: f64, b: f64, c: f64, d: f64) -> Vec<Point> {
