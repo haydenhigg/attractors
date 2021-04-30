@@ -34,6 +34,14 @@ and get an image like this (for `viridis`):
 
 ![sample for viridis](https://raw.githubusercontent.com/haydenhigg/attractors/main/examples/viridis.jpg)
 
+## examples
+
+<span>
+<img src="https://raw.githubusercontent.com/haydenhigg/attractors/main/examples/1.jpg" width="30%"/>
+<img src="https://raw.githubusercontent.com/haydenhigg/attractors/main/examples/2.jpg" width="30%"/>
+<img src="https://raw.githubusercontent.com/haydenhigg/attractors/main/examples/3.jpg" width="30%"/>
+</span>
+
 ## to-do
 
 - [ ] add new attractor functions
