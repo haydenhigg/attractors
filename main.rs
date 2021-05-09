@@ -2,9 +2,9 @@ mod attractor;
 mod colors;
 mod file;
 
-const ITERS: usize	= 140000000;
-const WIDTH: usize	= 4000;
-const HEIGHT: usize	= 4000;
+const ITERS: usize	= 140_000_000;
+const WIDTH: usize	= 4_000;
+const HEIGHT: usize	= 4_000;
 const OUTFILE: &str	= "out.ppm";
 
 fn main() {
